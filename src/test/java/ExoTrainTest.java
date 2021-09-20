@@ -29,6 +29,16 @@ public class ExoTrainTest {
         String asciiArt = new ExoTrain("HPRPH").toASCIIArt();
         assertThat(asciiArt).isEqualTo("<HHHH::|OOOO|::|hThT|::|OOOO|::HHHH>");
     }
-    
-    
+
+    @Test
+    void a_car_can_be_deatached_from_the_end_of_the_train() {
+        String asciiArt = new ExoTrain("HPRPH").detachEnd().toASCIIArt();
+        assertThat(asciiArt).isEqualTo("<HHHH::|OOOO|::|hThT|::|OOOO|");
+    }
+
+    @Test
+    void a_car_can_be_deatached_from_the_head_of_the_train() {
+        String asciiArt = new ExoTrain("HPRPH").detachHead().toASCIIArt();
+        assertThat(asciiArt).isEqualTo("|OOOO|::|hThT|::|OOOO|::HHHH>");
+    }
 }

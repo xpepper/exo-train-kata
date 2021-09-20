@@ -28,4 +28,20 @@ public class ExoTrain {
     private String toASCIICar(String carAsString) {
         return CAR_ASCII_MAP.get(carAsString);
     }
+
+    public ExoTrain detachEnd() {
+        return new ExoTrain(truncateLastCharFrom(trainAsString));
+    }
+
+    public ExoTrain detachHead() {
+        return new ExoTrain(truncateFirstCharFrom(trainAsString));
+    }
+
+    private String truncateFirstCharFrom(String string) {
+        return string.substring(1);
+    }
+
+    private String truncateLastCharFrom(String string) {
+        return string.substring(0, string.length()-1);
+    }
 }
