@@ -17,10 +17,12 @@ public class ExoTrain {
     }
 
     public String toASCIIArt() {
-        return trainAsString.chars()
+        String asciiArt = trainAsString.chars()
                 .mapToObj(c -> String.valueOf((char) c))
                 .map(c -> toASCIICar(c))
                 .collect(joining("::"));
+        
+        return asciiArt.replaceAll("::<HHHH", "::HHHH>");
     }
 
     private String toASCIICar(String carAsString) {

@@ -23,4 +23,12 @@ public class ExoTrainTest {
         String asciiArt = new ExoTrain("HPRP").toASCIIArt();
         assertThat(asciiArt).isEqualTo("<HHHH::|OOOO|::|hThT|::|OOOO|");
     }
+    
+    @Test
+    void convert_to_ASCII_a_train_with_a_locomotive_attached_at_the_end() {
+        String asciiArt = new ExoTrain("HPRPH").toASCIIArt();
+        assertThat(asciiArt).isEqualTo("<HHHH::|OOOO|::|hThT|::|OOOO|::HHHH>");
+    }
+    
+    
 }
