@@ -1,11 +1,10 @@
-# kata-template-java
+# Exo-train kata
 
-A simple template for starting quickly with a kata.
-Assume you'll use Java 13 or greater.
+Given a string representation of a train, print an ASCII-art representation of this train.
 
-Includes: 
+* `H`: locomotive `<HHHH`
+* `P`: passenger car `|OOOO|`
 
-* JUnit5
-* AssertJ
-* Apache Commons Lang 3.*
-* A simple script to perform a git handover for a mob session
+Cars are attached together by `::`
+
+`HPP` ---> `<HHHH::|OOOO|::|OOOO|`
