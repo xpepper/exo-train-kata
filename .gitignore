@@ -1,0 +1,8 @@
+.gradle
+build
+gradlew.bat
+
+.idea/*
+*.iws
+out/
+.idea_modules/
