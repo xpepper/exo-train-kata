@@ -1,8 +1,15 @@
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.joining;
 
 public class ExoTrain {
+    private static final Map<String, String> CAR_ASCII_MAP = new HashMap<>() {{
+        put("H", "<HHHH");
+        put("P", "|OOOO|");
+        put("R", "|hThT|");
+    }};
+    
     private final String trainAsString;
 
     public ExoTrain(String trainAsString) {
@@ -12,13 +19,11 @@ public class ExoTrain {
     public String toASCIIArt() {
         return trainAsString.chars()
                 .mapToObj(c -> String.valueOf((char) c))
-                .map(c -> toCar(c))
+                .map(c -> toASCIICar(c))
                 .collect(joining("::"));
-                
     }
 
-    private String toCar(String c) {
-        if (c.equals("H")) return "<HHHH";
-        return "|OOOO|";
+    private String toASCIICar(String carAsString) {
+        return CAR_ASCII_MAP.get(carAsString);
     }
 }
